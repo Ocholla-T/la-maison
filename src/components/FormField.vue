@@ -22,25 +22,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
 $primary: #11998e;
 $secondary: #38ef7d;
 $white: #fff;
 $gray: #9b9b9b;
+$font: "Lato", sans-serif;
+
+form {
+  width: 50%;
+}
+
 .form__group {
   position: relative;
   padding: 15px 0 0;
   margin-top: 10px;
-  width: 50%;
+  width: 100%;
 }
 
 .form__field {
-  font-family: inherit;
+  font-family: $font;
   width: 100%;
   border: 0;
   border-bottom: 2px solid $gray;
   outline: 0;
   font-size: 1.3rem;
-  padding: 7px 0;
+  padding: 10px 0;
   background: transparent;
   transition: border-color 0.2s;
 
@@ -86,5 +94,12 @@ $gray: #9b9b9b;
   &:invalid {
     box-shadow: none;
   }
+}
+
+/*button styling */
+button {
+  margin: 1.5rem auto auto auto;
+  background-color: $white;
+  border: none;
 }
 </style>
