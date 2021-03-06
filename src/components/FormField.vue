@@ -1,7 +1,7 @@
 <template>
   <form action="">
     <div class="form__group field" v-for="(label, index) in labelName" :key="index">
-      <input type="input" class="form__field" placeholder="Name" name="name" id="name" required />
+      <input type="input" class="form__field" placeholder="Name" name="name" id="name" v-model="inputValue[index]" required />
       <label for="name" class="form__label">{{ label.placeholder }}</label>
     </div>
 
@@ -9,6 +9,8 @@
       <img src="../assets/submit&add.png" alt="submit" />
     </button>
   </form>
+
+  <p>{{ inputValue }}</p>
 </template>
 
 <script>
@@ -16,6 +18,7 @@ export default {
   data() {
     return {
       labelName: [{ placeholder: "Device" }, { placeholder: "Buying Price" }, { placeholder: "Average Lifespan" }, { placeholder: "Years in Use" }],
+      inputValue: [],
     };
   },
 };
