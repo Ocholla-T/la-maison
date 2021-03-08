@@ -9,8 +9,6 @@
       <img src="../assets/submit&add.png" alt="submit" />
     </button>
   </form>
-
-  <p>{{ inputValue }}</p>
 </template>
 
 <script>
@@ -25,8 +23,16 @@ export default {
   },
 
   methods: {
-    onSubmit: async () => {
-      await createDevice();
+    onSubmit() {
+      const devices = {
+        device: this.inputValue[0],
+        buyingPrice: this.inputValue[1],
+        averageLifespan: this.inputValue[2],
+        yearsInUse: this.inputValue[3],
+      };
+      createDevice(devices).then(() => {
+        console.log("added to database!");
+      });
     },
   },
 };

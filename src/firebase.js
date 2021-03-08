@@ -1,4 +1,5 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
 import { onUnmounted, ref } from "vue";
 
 var firebaseConfig = {
@@ -11,10 +12,10 @@ var firebaseConfig = {
   measurementId: "G-J10KEYMXTZ",
 };
 // Initialize Firebase
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-const db = firebaseApp.firestore();
-const devicesCollection = db.collection("Devices");
+const db = firebase.firestore();
+const devicesCollection = db.collection("devices");
 
 export const createDevice = (device) => {
   return devicesCollection.add(device);
