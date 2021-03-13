@@ -1,5 +1,5 @@
 <template>
-  <FormField />
+  <FormField class="formfield" />
 </template>
 
 <script>
