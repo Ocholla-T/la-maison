@@ -1,7 +1,7 @@
 <template>
   <form action="" @submit.prevent="onSubmit" ref="form">
     <div class="form__group field" v-for="(label, index) in labelName" :key="index">
-      <input ref="inputElements" type="input" class="form__field" placeholder="Name" name="name" id="name" v-model="inputValue[index]" required />
+      <input type="input" class="form__field" placeholder="Name" name="name" v-model="inputValue[index]" required />
       <label for="name" class="form__label">{{ label.placeholder }}</label>
     </div>
 
